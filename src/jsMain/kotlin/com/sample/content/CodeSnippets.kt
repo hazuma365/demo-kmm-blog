@@ -8,10 +8,10 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 import com.sample.HighlightJs
 import com.sample.components.ContainerInSection
-import com.sample.content.style.WtCols
-import com.sample.content.style.WtOffsets
-import com.sample.content.style.WtRows
-import com.sample.content.style.WtTexts
+import com.sample.style.WtCols
+import com.sample.style.WtOffsets
+import com.sample.style.WtRows
+import com.sample.style.WtTexts
 import org.jetbrains.compose.web.css.keywords.auto
 import org.w3c.dom.HTMLElement
 

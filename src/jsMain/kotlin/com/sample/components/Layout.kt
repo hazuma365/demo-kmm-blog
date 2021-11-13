@@ -5,9 +5,9 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Main
 import org.jetbrains.compose.web.dom.Section
-import com.sample.content.style.WtContainer
-import com.sample.content.style.WtOffsets
-import com.sample.content.style.WtSections
+import com.sample.style.WtContainer
+import com.sample.style.WtOffsets
+import com.sample.style.WtSections
 
 @Composable
 fun Layout(content: @Composable () -> Unit) {

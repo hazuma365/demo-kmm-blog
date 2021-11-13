@@ -6,7 +6,8 @@ import org.jetbrains.compose.web.dom.*
 import com.sample.components.CardDark
 import com.sample.components.ContainerInSection
 import com.sample.components.LinkOnCard
-import com.sample.content.style.*
+import com.sample.style.*
+import com.sample.style.WtCols
 
 private data class GetStartedCardPresentation(
     val title: String,

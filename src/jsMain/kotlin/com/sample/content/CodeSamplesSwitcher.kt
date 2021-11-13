@@ -11,7 +11,7 @@ import org.jetbrains.compose.web.dom.Form
 import org.jetbrains.compose.web.dom.Input
 import org.jetbrains.compose.web.dom.Label
 import org.jetbrains.compose.web.dom.Text
-import com.sample.content.style.AppStylesheet
+import com.sample.style.AppStylesheet
 
 private object SwitcherVariables {
     val labelWidth by variable<CSSpxValue>()

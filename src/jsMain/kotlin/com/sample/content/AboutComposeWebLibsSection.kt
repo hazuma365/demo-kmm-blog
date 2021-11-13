@@ -6,7 +6,8 @@ import org.jetbrains.compose.web.dom.*
 import com.sample.components.Card
 import com.sample.components.ContainerInSection
 import com.sample.components.LinkOnCard
-import com.sample.content.style.*
+import com.sample.style.*
+import com.sample.style.WtCols
 import org.jetbrains.compose.web.css.paddingTop
 
 data class CardWithListPresentation(

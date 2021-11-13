@@ -1,10 +1,10 @@
 package com.sample.components
 
 import androidx.compose.runtime.Composable
-import com.sample.content.style.WtCards
-import com.sample.content.style.WtCols
-import com.sample.content.style.WtOffsets
-import com.sample.content.style.WtTexts
+import com.sample.style.WtCards
+import com.sample.style.WtCols
+import com.sample.style.WtOffsets
+import com.sample.style.WtTexts
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.*

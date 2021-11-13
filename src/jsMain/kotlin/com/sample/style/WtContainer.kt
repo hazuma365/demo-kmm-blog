@@ -1,5 +1,4 @@
-package com.sample.content.style
-
+package com.sample.style
 import org.jetbrains.compose.web.css.*
 
 object WtContainer : StyleSheet(AppStylesheet) {

@@ -5,7 +5,8 @@ import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.*
 import com.sample.components.ContainerInSection
-import com.sample.content.style.*
+import com.sample.style.*
+import com.sample.style.WtCols
 
 @Composable
 fun JoinUs() {

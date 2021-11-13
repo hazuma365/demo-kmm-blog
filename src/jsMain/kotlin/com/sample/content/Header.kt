@@ -1,7 +1,8 @@
 package com.sample.content
 
 import androidx.compose.runtime.Composable
-import com.sample.content.style.*
+import com.sample.style.*
+import com.sample.style.WtCols
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*

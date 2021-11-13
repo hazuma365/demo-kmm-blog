@@ -1,5 +1,7 @@
-package com.sample.content.style
+package com.sample.style
 
+import com.sample.style.AppCSSVariables
+import com.sample.style.AppStylesheet
 import org.jetbrains.compose.web.css.CSSBuilder
 import org.jetbrains.compose.web.css.CSSUnitValue
 import org.jetbrains.compose.web.css.GenericStyleSheetBuilder
