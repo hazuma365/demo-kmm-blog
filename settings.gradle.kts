@@ -1,4 +1,4 @@
-rootProject.name = "presudo-kotlin-web-landing"
+rootProject.name = "demo-kmm-blog"
 
 pluginManagement {
     repositories {
