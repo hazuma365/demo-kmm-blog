@@ -1,5 +1,4 @@
 import org.jetbrains.compose.compose
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 
 // Add compose gradle plugin
@@ -27,6 +26,8 @@ kotlin {
                 implementation(npm("highlight.js", "10.7.2"))
                 implementation(compose.web.core)
                 implementation(compose.runtime)
+                implementation("org.jetbrains:markdown-js:0.2.4")
+                implementation("com.atlassian.commonmark:commonmark:0.15.2")
             }
         }
     }
