@@ -8,7 +8,6 @@ import org.jetbrains.compose.web.dom.*
 interface MarkdownContent {
     @Composable
     open fun render()
-
 }
 
 @Composable
@@ -42,8 +41,25 @@ data class HeaderContent(
 
     @Composable
     override fun render() {
-        H1(attrs = { classes(MarkdownStyle.wtH1) }) {
-            Text(title)
+        when (level) {
+            "1" -> H1(attrs = { classes(MarkdownStyle.wtH1) }) {
+                Text(title)
+            }
+            "2" -> H2(attrs = { classes(MarkdownStyle.wtH2) }) {
+                Text(title)
+            }
+            "3" -> H3(attrs = { classes(MarkdownStyle.wtH3) }) {
+                Text(title)
+            }
+            "4" -> H4(attrs = { classes(MarkdownStyle.wtH4) }) {
+                Text(title)
+            }
+            "5" -> H5(attrs = { classes(MarkdownStyle.wtH5) }) {
+                Text(title)
+            }
+            "6" -> H6(attrs = { classes(MarkdownStyle.wtH6) }) {
+                Text(title)
+            }
         }
     }
 }
@@ -114,7 +130,6 @@ data class TextAndBrContent(
     }
 }
 
-
 data class BrContent(
     val text: String
 ) : MarkdownContent {
@@ -124,7 +139,6 @@ data class BrContent(
         Br()
     }
 }
-
 
 data class CodeBlock(
     val language: String,

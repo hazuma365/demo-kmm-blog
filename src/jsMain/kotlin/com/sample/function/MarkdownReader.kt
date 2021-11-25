@@ -29,11 +29,16 @@ class MarkdownReader {
         markdown: String,
         markdownContents: MutableList<MarkdownContent>
     ) {
-        TextAndBrContent("parents:" + astNode.type.name + ":" + astNode.getTextInNode(markdown).toString())
+        markdownContents.add(
+            TextAndBrContent("parents:" + astNode.type.name + ":" + astNode.getTextInNode(markdown).toString())
+        )
         astNode.children.forEach {
             markdownContents.add(
                 TextAndBrContent("child:" + it.type.name + ":" + it.getTextInNode(markdown).toString())
             )
+            if (it.children.isNotEmpty()) {
+                debug(it, markdown, markdownContents)
+            }
         }
     }
 }
@@ -42,12 +47,12 @@ private fun ASTNode.parse(content: String): MarkdownContent {
     val value = this.getTextInNode(content).toString()
     return when (type) {
         MarkdownElementTypes.PARAGRAPH -> buildParagraph(this, content)
-        MarkdownElementTypes.ATX_1 -> buildHeader(this, content)
-        MarkdownElementTypes.ATX_2 -> buildHeader(this, content)
-        MarkdownElementTypes.ATX_3 -> buildHeader(this, content)
-        MarkdownElementTypes.ATX_4 -> buildHeader(this, content)
-        MarkdownElementTypes.ATX_5 -> buildHeader(this, content)
-        MarkdownElementTypes.ATX_6 -> buildHeader(this, content)
+        MarkdownElementTypes.ATX_1 -> buildHeader(this, content, "1")
+        MarkdownElementTypes.ATX_2 -> buildHeader(this, content, "2")
+        MarkdownElementTypes.ATX_3 -> buildHeader(this, content, "3")
+        MarkdownElementTypes.ATX_4 -> buildHeader(this, content, "4")
+        MarkdownElementTypes.ATX_5 -> buildHeader(this, content, "5")
+        MarkdownElementTypes.ATX_6 -> buildHeader(this, content, "6")
         MarkdownElementTypes.CODE_FENCE -> buildeCodeBlock(this, content)
         MarkdownElementTypes.UNORDERED_LIST -> buildUnorderedList(this, content)
         MarkdownElementTypes.ORDERED_LIST -> buildOrderedList(this, content)
@@ -56,7 +61,7 @@ private fun ASTNode.parse(content: String): MarkdownContent {
     }
 }
 
-fun buildeCodeBlock(astNode: ASTNode, content: String): MarkdownContent {
+private fun buildeCodeBlock(astNode: ASTNode, content: String): MarkdownContent {
     val title = astNode.findChildOfTypeRecursive(MarkdownTokenTypes.FENCE_LANG)?.getTextInNode(content).toString()
 
     val code = astNode.findChildrenOfTypeRecursive(MarkdownTokenTypes.CODE_FENCE_CONTENT)?.map {
@@ -69,7 +74,7 @@ fun buildeCodeBlock(astNode: ASTNode, content: String): MarkdownContent {
     )
 }
 
-fun buildParagraph(node: ASTNode, content: String): MarkdownContent {
+private fun buildParagraph(node: ASTNode, content: String): MarkdownContent {
     val childMarkdownContents = node.children.map {
         when (it.type) {
             MarkdownTokenTypes.EOL -> BrContent("")
@@ -80,27 +85,28 @@ fun buildParagraph(node: ASTNode, content: String): MarkdownContent {
     return Paragraph(childMarkdownContents = childMarkdownContents)
 }
 
-fun buildHeader(astNode: ASTNode, content: String): MarkdownContent {
+private fun buildHeader(astNode: ASTNode, content: String, level: String): MarkdownContent {
     return HeaderContent(
-        level = "1",
+        level = level,
         title = astNode.findChildOfTypeRecursive(MarkdownTokenTypes.ATX_CONTENT)?.getTextInNode(content).toString()
     )
 }
 
-fun buildUnorderedList(node: ASTNode, content: String): MarkdownContent {
-    val childMarkdownContents =
-        node.findChildrenOfTypeRecursive(MarkdownElementTypes.LIST_ITEM)?.map {
-            TextContent(it.getTextInNode(content).toString())
-        }
-
+private fun buildUnorderedList(node: ASTNode, content: String): MarkdownContent {
+    val listItems =
+        node.findChildrenOfTypeRecursive(MarkdownElementTypes.LIST_ITEM)
+    val childMarkdownContents = listItems.map {
+        TextContent(it.findChildrenOfTypeRecursive(MarkdownElementTypes.PARAGRAPH)[0].getTextInNode(content).toString())
+    }
     return UnorderedList(childMarkdownContents)
 }
 
-fun buildOrderedList(node: ASTNode, content: String): MarkdownContent {
-    val childMarkdownContents =
-        node.findChildrenOfTypeRecursive(MarkdownElementTypes.LIST_ITEM)?.map {
-            TextContent(it.getTextInNode(content).toString())
-        }
+private fun buildOrderedList(node: ASTNode, content: String): MarkdownContent {
+    val listItems =
+        node.findChildrenOfTypeRecursive(MarkdownElementTypes.LIST_ITEM)
+    val childMarkdownContents = listItems.map {
+        TextContent(it.findChildrenOfTypeRecursive(MarkdownElementTypes.PARAGRAPH)[0].getTextInNode(content).toString())
+    }
     return OrderedList(childMarkdownContents)
 }
 
@@ -108,7 +114,7 @@ fun buildOrderedList(node: ASTNode, content: String): MarkdownContent {
 /**
  * Find a child node recursive
  */
-fun ASTNode.findChildOfTypeRecursive(type: IElementType): ASTNode? {
+private fun ASTNode.findChildOfTypeRecursive(type: IElementType): ASTNode? {
     children.forEach {
         if (it.type == type) {
             return it
@@ -125,7 +131,7 @@ fun ASTNode.findChildOfTypeRecursive(type: IElementType): ASTNode? {
 /**
  * Find a child node recursive
  */
-fun ASTNode.findChildrenOfTypeRecursive(type: IElementType): List<ASTNode> {
+private fun ASTNode.findChildrenOfTypeRecursive(type: IElementType): List<ASTNode> {
     return children.filter {
         it.type == type
     }.toList()
