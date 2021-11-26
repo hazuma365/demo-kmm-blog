@@ -23,4 +23,8 @@ object WtSections : StyleSheet(AppStylesheet) {
         backgroundColor(Color("#323236"))
         backgroundColor(AppCSSVariables.wtColorGreyDark.value())
     }
+
+    val wtSectionBgWhite by style {
+        backgroundColor(Color("#FFFFFF"))
+    }
 }

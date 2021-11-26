@@ -10,14 +10,14 @@ import org.jetbrains.compose.web.dom.*
 import kotlinx.browser.window
 
 @Composable
-fun Header() {
+fun MainArea() {
     Section(attrs = {
         classes(WtSections.wtSectionBgWhite)
     }) {
         Div({
             classes(WtCols.wtProfile)
         }) {
-
+            Articles()
         }
     }
 }

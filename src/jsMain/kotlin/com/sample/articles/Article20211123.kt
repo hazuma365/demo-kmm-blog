@@ -1,10 +1,10 @@
 package com.sample.articles
 
-val article20211121 =
+val article20211123 =
     Article(
-        title = "2021-11-22",
+        title = "2021-11-23",
         categories = listOf("blog", "kotlin"),
-        date = "2021-11-22",
+        date = "2021-11-23",
         body = """
 # Compose for Web でブログをつくる
 # WHY
@@ -16,10 +16,10 @@ val article20211121 =
 - 記事をマークダウンで投稿することができる。
 - 泥臭くてもいいのでまずは動くもの、見せられるものをつくる。
 # 技術要素
-フロントエンド
+## フロントエンド
 - Compose for Web
 - マークダウン読み込み、自作。()
-バックエンド
+## バックエンド
 - AWS Amplify
 # フロントエンド
 ## Compose for Web

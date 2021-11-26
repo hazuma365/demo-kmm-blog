@@ -10,14 +10,22 @@ import org.jetbrains.compose.web.dom.*
 import kotlinx.browser.window
 
 @Composable
-fun Header() {
+fun Profile() {
     Section(attrs = {
         classes(WtSections.wtSectionBgWhite)
     }) {
         Div({
             classes(WtCols.wtProfile)
         }) {
-
+            Img(src = "icon.svg", attrs = {
+                style {
+                    width(120.px)
+                    height(120.px)
+                }
+            })
+            H1(attrs = { classes(MarkdownStyle.wtH1) }) {
+                Text("あれやこれや")
+            }
         }
     }
 }

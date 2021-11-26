@@ -2,16 +2,7 @@ package com.sample.style
 
 import com.sample.style.AppCSSVariables
 import com.sample.style.AppStylesheet
-import org.jetbrains.compose.web.css.CSSBuilder
-import org.jetbrains.compose.web.css.CSSUnitValue
-import org.jetbrains.compose.web.css.GenericStyleSheetBuilder
-import org.jetbrains.compose.web.css.StyleSheet
-import org.jetbrains.compose.web.css.flexGrow
-import org.jetbrains.compose.web.css.maxWidth
-import org.jetbrains.compose.web.css.media
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.mediaMaxWidth
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.selectors.CSSSelector
 
 fun <TBuilder> GenericStyleSheetBuilder<TBuilder>.mediaMaxWidth(
@@ -136,4 +127,16 @@ object WtCols : StyleSheet(AppStylesheet) {
         maxWidth(100.percent)
         property("flex-basis", "auto")
     }
+
+    val wtProfile by style {
+        AppCSSVariables.wtColCount(0)
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        flexDirection(FlexDirection.Column)
+        alignItems(AlignItems.Center)
+        maxWidth(100.percent)
+        property("border-bottom","1px solid black")
+    }
+
+
 }

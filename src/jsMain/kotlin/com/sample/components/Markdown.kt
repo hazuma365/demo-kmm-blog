@@ -12,6 +12,7 @@ interface MarkdownContent {
 
 @Composable
 fun markdown(
+    title: String,
     markdown: Markdown,
     darkTheme: Boolean = false,
     wtExtraStyleClasses: List<String> = listOf(WtCols.wtCol6, WtCols.wtColMd6, WtCols.wtColSm12)
@@ -23,6 +24,9 @@ fun markdown(
         Div({
             classes(WtCards.wtCardSection, WtCards.wtVerticalFlex)
         }) {
+            H1(attrs = { classes(MarkdownStyle.wtH1) }) {
+                Text(title)
+            }
             markdown.childContents.forEach { child ->
                 child.render()
             }
@@ -42,22 +46,22 @@ data class HeaderContent(
     @Composable
     override fun render() {
         when (level) {
-            "1" -> H1(attrs = { classes(MarkdownStyle.wtH1) }) {
+            "1" -> H1(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
-            "2" -> H2(attrs = { classes(MarkdownStyle.wtH2) }) {
+            "2" -> H2(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
-            "3" -> H3(attrs = { classes(MarkdownStyle.wtH3) }) {
+            "3" -> H3(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
-            "4" -> H4(attrs = { classes(MarkdownStyle.wtH4) }) {
+            "4" -> H4(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
-            "5" -> H5(attrs = { classes(MarkdownStyle.wtH5) }) {
+            "5" -> H5(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
-            "6" -> H6(attrs = { classes(MarkdownStyle.wtH6) }) {
+            "6" -> H6(attrs = { classes(MarkdownStyle.wtSubtitle) }) {
                 Text(title)
             }
         }

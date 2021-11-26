@@ -11,7 +11,8 @@ fun main() {
         Style(AppStylesheet)
         Layout {
             Header()
-            Articles()
+            Profile()
+            MainArea()
             PageFooter()
         }
     }

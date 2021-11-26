@@ -1,10 +1,10 @@
 package com.sample.articles
 
-val article20211121 =
+val article20211125 =
     Article(
-        title = "2021-11-22",
+        title = "2021-11-25",
         categories = listOf("blog", "kotlin"),
-        date = "2021-11-22",
+        date = "2021-11-25",
         body = """
 # Compose for Web でブログをつくる
 # WHY
