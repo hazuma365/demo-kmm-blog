@@ -199,79 +199,7 @@ private val allSnippets = arrayOf(
 private var currentCodeSnippet: CodeSnippetData by mutableStateOf(allSnippets[0])
 private var selectedSnippetIx: Int by mutableStateOf(0)
 
-@Composable
-fun CodeSamples() {
-    ContainerInSection {
-        Div({
-            classes(WtRows.wtRow)
-            style {
-                justifyContent(JustifyContent.SpaceBetween)
-            }
-        }) {
-            Div({ classes(WtCols.wtCol6, WtCols.wtColMd4, WtCols.wtColSm12) }) {
-                H1({
-                    classes(WtTexts.wtH2)
-                }) {
-                    Text("Code samples")
-                }
-            }
 
-            Div({ classes(WtOffsets.wtTopOffsetSm24) }) {
-                CodeSampleSwitcher(count = allSnippets.size, current = selectedSnippetIx) {
-                    selectedSnippetIx = it
-                    currentCodeSnippet = allSnippets[it]
-                }
-            }
-        }
-
-        TitledCodeSample(title = currentCodeSnippet.title, code = currentCodeSnippet.source)
-    }
-}
-
-@Composable
-private fun TitledCodeSample(title: String, code: String) {
-    H3({
-        classes(WtTexts.wtH3, WtOffsets.wtTopOffset48)
-    }) {
-        Text(title)
-    }
-
-    Div({
-        classes(WtOffsets.wtTopOffset24)
-        style {
-            backgroundColor(rgba(39, 40, 44, 0.05))
-            borderRadius(8.px, 8.px, 8.px)
-            padding(12.px, 16.px)
-        }
-    }) {
-        FormattedCodeSnippet(code = code)
-    }
-}
-
-@Composable
-fun FormattedCodeSnippet(code: String, language: String = "kotlin") {
-    Pre({
-        style {
-            maxHeight(25.em)
-            overflow("auto")
-            height(auto)
-        }
-    }) {
-        Code({
-            classes("language-$language", "hljs")
-            style {
-                property("font-family", "'JetBrains Mono', monospace")
-                property("tab-size", 4)
-                fontSize(10.pt)
-                backgroundColor(Color("transparent"))
-            }
-        }) {
-            DomSideEffect(code) {
-                it.setHighlightedCode(code)
-            }
-        }
-    }
-}
 
 private data class CodeSnippetData(
     val title: String,

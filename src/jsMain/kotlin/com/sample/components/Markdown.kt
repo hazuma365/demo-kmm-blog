@@ -1,8 +1,8 @@
 package com.sample.content
 
 import androidx.compose.runtime.Composable
+import com.sample.components.CodeSnippet
 import com.sample.style.*
-import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
 interface MarkdownContent {
@@ -151,16 +151,7 @@ data class CodeBlock(
 
     @Composable
     override fun render() {
-        Div({
-            classes(WtOffsets.wtTopOffset24)
-            style {
-                backgroundColor(rgba(39, 40, 44, 0.05))
-                borderRadius(8.px, 8.px, 8.px)
-                padding(12.px, 16.px)
-            }
-        }) {
-            FormattedCodeSnippet(code = code, language = language)
-        }
+        CodeSnippet(code = code,language = language)
     }
 }
 
