@@ -21,6 +21,8 @@ fun Profile() {
                 style {
                     width(120.px)
                     height(120.px)
+                    borderRadius(50.percent)
+                    border(3.px, LineStyle.Solid)
                 }
             })
             H1(attrs = { classes(MarkdownStyle.wtH1) }) {
