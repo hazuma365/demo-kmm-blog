@@ -1,4 +1,6 @@
-package com.sample.articles
+package com.sample.content
+
+import com.sample.data.Article
 
 val article20211125 =
     Article(
