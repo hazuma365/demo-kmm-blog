@@ -12,10 +12,10 @@ import kotlinx.browser.window
 @Composable
 fun MainArea() {
     Section(attrs = {
-        classes(WtSections.wtSectionBgWhite)
+        classes(WtRows.wtRow, WtRows.wtRowSizeM, WtRows.wtRowSmAlignItemsCenter)
     }) {
         Div({
-            classes(WtCols.wtProfile)
+            classes(WtCols.wtMainArea)
         }) {
             Articles()
         }

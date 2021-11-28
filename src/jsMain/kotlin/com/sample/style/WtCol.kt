@@ -138,5 +138,26 @@ object WtCols : StyleSheet(AppStylesheet) {
         property("border-bottom","1px solid black")
     }
 
+    val wtMainArea by style {
+        AppCSSVariables.wtColCount(0)
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        flexDirection(FlexDirection.Column)
+        alignItems(AlignItems.Baseline)
+        maxWidth(100.percent)
+        property("margin-left", "auto")
+        property("margin-right", "auto")
+
+    }
+
+    val wtArticle by style {
+        AppCSSVariables.wtColCount(0)
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Left)
+        flexDirection(FlexDirection.Column)
+        alignItems(AlignItems.Baseline)
+        maxWidth(100.percent)
+    }
+
 
 }

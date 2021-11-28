@@ -12,7 +12,7 @@ import kotlinx.browser.window
 @Composable
 fun Profile() {
     Section(attrs = {
-        classes(WtSections.wtSectionBgWhite)
+        classes(WtSections.wtSectionBgWhite,WtOffsets.wtTopOffset24)
     }) {
         Div({
             classes(WtCols.wtProfile)

@@ -1,6 +1,6 @@
 package com.sample.function
 
-import com.sample.content.*
+import com.sample.components.*
 import org.intellij.markdown.IElementType
 import org.intellij.markdown.MarkdownElementTypes
 import org.intellij.markdown.MarkdownTokenTypes

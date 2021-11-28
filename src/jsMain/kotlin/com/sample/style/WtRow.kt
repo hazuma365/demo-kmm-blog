@@ -29,10 +29,6 @@ object WtRows : StyleSheet(AppStylesheet) {
         }
     }
 
-    val wtRowSizeXs by style {
-        AppCSSVariables.wtHorizontalLayoutGutter(6.px)
-    }
-
     val wtRowSmAlignItemsCenter by style {
         self style {
             alignItems(AlignItems.Center)

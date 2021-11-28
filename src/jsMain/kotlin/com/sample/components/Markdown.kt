@@ -1,7 +1,6 @@
-package com.sample.content
+package com.sample.components
 
 import androidx.compose.runtime.Composable
-import com.sample.components.CodeSnippet
 import com.sample.style.*
 import org.jetbrains.compose.web.dom.*
 
@@ -14,24 +13,18 @@ interface MarkdownContent {
 fun markdown(
     title: String,
     markdown: Markdown,
-    darkTheme: Boolean = false,
-    wtExtraStyleClasses: List<String> = listOf(WtCols.wtCol6, WtCols.wtColMd6, WtCols.wtColSm12)
 ) {
     Div({
-        classes(WtCards.wtCard, WtOffsets.wtTopOffset24, *wtExtraStyleClasses.toTypedArray())
-        classes(if (darkTheme) WtCards.wtCardThemeDark else WtCards.wtCardThemeLight)
+        classes(WtCols.wtArticle)
     }) {
-        Div({
-            classes(WtCards.wtCardSection, WtCards.wtVerticalFlex)
-        }) {
-            H1(attrs = { classes(MarkdownStyle.wtH1) }) {
-                Text(title)
-            }
-            markdown.childContents.forEach { child ->
-                child.render()
-            }
+        H1(attrs = { classes(MarkdownStyle.wtH1) }) {
+            Text(title)
+        }
+        markdown.childContents.forEach { child ->
+            child.render()
         }
     }
+
 }
 
 data class Markdown(
@@ -151,7 +144,7 @@ data class CodeBlock(
 
     @Composable
     override fun render() {
-        CodeSnippet(code = code,language = language)
+        CodeSnippet(code = code, language = language)
     }
 }
 
