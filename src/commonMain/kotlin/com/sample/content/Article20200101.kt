@@ -4,10 +4,11 @@ import com.sample.data.Article
 
 val article20211121 =
     Article(
-        title = "2021-11-22",
-        categories = listOf("blog", "kotlin"),
-        date = "2021-11-22",
+        title = "2000-01-01",
+        categories = listOf("test"),
+        date = "2000-01-01",
         body = """
+テスト投稿
 # H1
 ## H2
 ### H3

@@ -22,7 +22,7 @@ fun Profile() {
                     width(120.px)
                     height(120.px)
                     borderRadius(50.percent)
-                    border(3.px, LineStyle.Solid)
+                    border(10.px, LineStyle.Solid)
                 }
             })
             H1(attrs = { classes(MarkdownStyle.wtH1) }) {

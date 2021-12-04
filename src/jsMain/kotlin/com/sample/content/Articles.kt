@@ -18,7 +18,7 @@ fun Articles() {
     Section(attrs = {
         classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
     }) {
-        articleRepository.getAll().forEach { article ->
+        articleRepository.getAll().sortedByDescending { it.date }.forEach { article ->
             Div({
                 classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
             }) {
