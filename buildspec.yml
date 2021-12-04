@@ -8,6 +8,7 @@ phases:
     commands:
       - java -version
       - ./gradlew jsBrowserProductionWebpack
+      - ls
 artifacts:
   files:
     - '**/*'
