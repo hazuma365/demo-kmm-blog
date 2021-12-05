@@ -14,10 +14,12 @@ fun Header() {
     Section(attrs = {
         classes(WtSections.wtSectionBgWhite)
     }) {
-        Div({
-            classes(WtCols.wtProfile)
-        }) {
+        Div({ classes(WtContainer.wtContainer) }) {
+            Div({
+                classes(WtCols.wtProfile)
+            }) {
 
+            }
         }
     }
 }

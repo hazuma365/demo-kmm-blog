@@ -14,10 +14,12 @@ fun MainArea() {
     Section(attrs = {
         classes(WtRows.wtRow, WtRows.wtRowSizeM, WtRows.wtRowSmAlignItemsCenter)
     }) {
-        Div({
-            classes(WtCols.wtMainArea)
-        }) {
-            Articles()
+        Div({ classes(WtContainer.wtContainer) }) {
+            Div({
+                classes(WtCols.wtMainArea)
+            }) {
+                Articles()
+            }
         }
     }
 }
