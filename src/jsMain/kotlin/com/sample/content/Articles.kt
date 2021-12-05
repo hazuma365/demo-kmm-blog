@@ -15,16 +15,12 @@ val articleRepository = ArticleRepository()
 @Composable
 fun Articles() {
     val markdownReader = MarkdownReader()
-    Section(attrs = {
-        classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
-    }) {
-        articleRepository.getAll().sortedByDescending { it.date }.forEach { article ->
-            Div({
-                classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
-            }) {
-                val markdown = markdownReader.read(article.body)
-                markdown(article.date, markdown)
-            }
+    articleRepository.getAll().sortedByDescending { it.date }.forEach { article ->
+        Div({
+            classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
+        }) {
+            val markdown = markdownReader.read(article.body)
+            markdown(article.date, markdown)
         }
     }
 }

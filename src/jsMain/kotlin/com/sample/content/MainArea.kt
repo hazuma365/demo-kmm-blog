@@ -1,6 +1,7 @@
 package com.sample.content
 
 import androidx.compose.runtime.Composable
+import com.sample.components.ContainerInSection
 import com.sample.style.*
 import com.sample.style.WtCols
 import org.jetbrains.compose.web.attributes.ATarget
@@ -11,14 +12,16 @@ import kotlinx.browser.window
 
 @Composable
 fun MainArea() {
-    Section(attrs = {
-        classes(WtRows.wtRow, WtRows.wtRowSizeM, WtRows.wtRowSmAlignItemsCenter)
-    }) {
-        Div({ classes(WtContainer.wtContainer) }) {
-            Div({
-                classes(WtCols.wtMainArea)
-            }) {
-                Articles()
+    ContainerInSection {
+        Div(attrs = {
+            classes(WtRows.wtRow, WtRows.wtRowSizeM, WtRows.wtRowSmAlignItemsCenter)
+        }) {
+            Div({ classes(WtContainer.wtContainer) }) {
+                Div({
+                    classes(WtCols.wtMainArea)
+                }) {
+                    Articles()
+                }
             }
         }
     }

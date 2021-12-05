@@ -145,6 +145,7 @@ object WtCols : StyleSheet(AppStylesheet) {
         flexDirection(FlexDirection.Column)
         alignItems(AlignItems.Baseline)
         maxWidth(100.percent)
+        padding(12.px, 16.px)
         property("margin-left", "auto")
         property("margin-right", "auto")
 
@@ -158,6 +159,4 @@ object WtCols : StyleSheet(AppStylesheet) {
         alignItems(AlignItems.Baseline)
         maxWidth(100.percent)
     }
-
-
 }

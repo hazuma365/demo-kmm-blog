@@ -3,6 +3,7 @@ package com.sample.components
 import androidx.compose.runtime.Composable
 import com.sample.HighlightJs
 import com.sample.style.WtOffsets
+import com.sample.style.WtRows
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.Code
@@ -14,16 +15,22 @@ import org.w3c.dom.HTMLElement
 @Composable
 fun CodeSnippet(code: String, language: String) {
     Div({
-        classes(WtOffsets.wtTopOffset24)
+        classes(WtRows.wtRow)
         style {
-            backgroundColor(rgba(39, 40, 44, 0.05))
-            borderRadius(8.px, 8.px, 8.px)
-            padding(12.px, 16.px)
+            justifyContent(JustifyContent.SpaceBetween)
         }
     }) {
-        FormattedCodeSnippet(code = code, language = language)
+        Div({
+            classes(WtOffsets.wtTopOffset24)
+            style {
+                backgroundColor(rgba(39, 40, 44, 0.05))
+                borderRadius(8.px, 8.px, 8.px)
+                padding(12.px, 16.px)
+            }
+        }) {
+            FormattedCodeSnippet(code = code, language = language)
+        }
     }
-
 }
 
 @Composable
