@@ -4,4 +4,5 @@ val articleList = listOf(
     article20211121,
     article20200101,
     article20200105,
+    article20200106,
 )
