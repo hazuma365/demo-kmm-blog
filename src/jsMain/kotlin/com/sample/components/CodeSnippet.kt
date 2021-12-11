@@ -38,7 +38,9 @@ fun FormattedCodeSnippet(code: String, language: String = "kotlin") {
     Pre({
         style {
             maxHeight(25.em)
-            overflow("auto")
+            maxWidth(100.em)
+            overflowX("auto")
+            overflowY("auto")
             height(auto)
         }
     }) {

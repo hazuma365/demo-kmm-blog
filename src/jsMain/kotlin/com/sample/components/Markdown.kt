@@ -144,7 +144,7 @@ data class CodeBlock(
 
     @Composable
     override fun render() {
-        CodeSnippet(code = code, language = language)
+        FormattedCodeSnippet(code = code, language = language)
     }
 }
 
