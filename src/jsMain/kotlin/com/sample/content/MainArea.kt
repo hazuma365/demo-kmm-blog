@@ -18,7 +18,12 @@ fun MainArea() {
         }) {
             Div({ classes(WtContainer.wtContainer) }) {
                 Div({
-                    classes(WtCols.wtMainArea)
+                    classes(
+                        WtCols.wtMainArea,
+                        WtCols.wtCol10,
+                        WtCols.wtColMd8,
+                        WtCols.wtColSm12,
+                        WtDisplay.wtDisplayMdBlock)
                 }) {
                     Articles()
                 }

@@ -12,7 +12,7 @@ val article20200106 =
 # AWS Amplifyを使う
 Java
 - https://docs.aws.amazon.com/ja_jp/corretto/latest/corretto-11-ug/generic-linux-install.html
-```yml
+```yaml
 version: 1
 frontend:
   phases:
