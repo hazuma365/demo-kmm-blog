@@ -12,7 +12,6 @@ import org.w3c.dom.HTMLElement
 fun FormattedCodeSnippet(code: String, language: String = "kotlin") {
     Pre({
         style {
-            maxHeight(25.em)
             overflow("auto")
             height(auto)
             marginTop(24.px)

@@ -7,6 +7,8 @@ import com.sample.repository.ArticleRepository
 import com.sample.style.WtCols
 import com.sample.style.WtOffsets
 import com.sample.style.WtSections
+import org.jetbrains.compose.web.css.em
+import org.jetbrains.compose.web.css.maxWidth
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Section
 
@@ -18,6 +20,9 @@ fun Articles() {
     articleRepository.getAll().sortedByDescending { it.date }.forEach { article ->
         Div({
             classes(WtSections.wtSectionBgWhite, WtOffsets.wtTopOffset24, WtOffsets.wtBottomOffset24)
+            style {
+                maxWidth(36.em)
+            }
         }) {
             val markdown = markdownReader.read(article.body)
             markdown(article.date, markdown)

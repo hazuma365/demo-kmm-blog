@@ -145,7 +145,7 @@ object WtCols : StyleSheet(AppStylesheet) {
         flexDirection(FlexDirection.Column)
         alignItems(AlignItems.Baseline)
         maxWidth(100.percent)
-        padding(12.px, 16.px)
+        padding(20.px, 20.px)
         property("margin-left", "auto")
         property("margin-right", "auto")
         property("word-break", "break-all")
