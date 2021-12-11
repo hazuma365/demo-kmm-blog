@@ -148,6 +148,8 @@ object WtCols : StyleSheet(AppStylesheet) {
         padding(12.px, 16.px)
         property("margin-left", "auto")
         property("margin-right", "auto")
+        property("word-break", "break-all")
+
 
     }
 
