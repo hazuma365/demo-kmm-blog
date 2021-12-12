@@ -6,4 +6,5 @@ val articleList = listOf(
     article20200105,
     article20200106,
     article20200111,
+    article20200112,
 )

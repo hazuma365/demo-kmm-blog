@@ -12,6 +12,7 @@ fun main() {
         Style(AppStylesheet)
         Layout {
             Header()
+            Categories()
             MainContentLayout() { MainArea() }
             PageFooter()
         }

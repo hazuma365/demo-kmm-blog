@@ -1,17 +1,18 @@
 package com.sample.content
 
 import androidx.compose.runtime.Composable
+import com.sample.articles
 import com.sample.components.ContainerInSection
+import com.sample.repository.ArticleRepository
 import com.sample.style.*
 import com.sample.style.WtCols
-import org.jetbrains.compose.web.attributes.ATarget
-import org.jetbrains.compose.web.attributes.target
-import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
-import kotlinx.browser.window
 
 @Composable
 fun MainArea() {
+    val articleRepository = ArticleRepository()
+    articles = articleRepository.getAll()
+
     ContainerInSection {
         Div(attrs = {
             classes(WtRows.wtRow, WtRows.wtRowSizeM, WtRows.wtRowSmAlignItemsCenter)
@@ -25,7 +26,7 @@ fun MainArea() {
                         WtCols.wtColSm12,
                         WtDisplay.wtDisplayMdBlock)
                 }) {
-                    Articles()
+                    Articles(articles)
                 }
             }
         }
