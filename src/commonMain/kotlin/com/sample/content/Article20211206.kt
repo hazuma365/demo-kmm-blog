@@ -4,12 +4,11 @@ import com.sample.data.Article
 
 val article20200106 =
     Article(
-        title = "2021-12-06",
-        categories = listOf("blog","aws"),
+        title = "AWS Amplifyを使う",
+        categories = listOf("blog", "aws"),
         date = "2021-12-06",
         body = """
 
-# AWS Amplifyを使う
 Java
 - https://docs.aws.amazon.com/ja_jp/corretto/latest/corretto-11-ug/generic-linux-install.html
 ```yaml

@@ -1,7 +1,7 @@
 package com.sample.components
 
 import androidx.compose.runtime.Composable
-import com.sample.style.*
+import com.sample.style.MarkdownStyle
 import org.jetbrains.compose.web.dom.*
 
 interface MarkdownContent {
@@ -11,20 +11,11 @@ interface MarkdownContent {
 
 @Composable
 fun markdown(
-    title: String,
     markdown: Markdown,
 ) {
-    Div({
-        classes(WtCols.wtArticle)
-    }) {
-        H1(attrs = { classes(MarkdownStyle.wtH1) }) {
-            Text(title)
-        }
-        markdown.childContents.forEach { child ->
-            child.render()
-        }
+    markdown.childContents.forEach { child ->
+        child.render()
     }
-
 }
 
 data class Markdown(

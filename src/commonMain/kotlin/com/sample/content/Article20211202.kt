@@ -4,7 +4,7 @@ import com.sample.data.Article
 
 val article20200102 =
     Article(
-        title = "2021-12-02",
+        title = "ブログのアーキテクチャ",
         categories = listOf("blog"),
         date = "2021-12-02",
         body = """
