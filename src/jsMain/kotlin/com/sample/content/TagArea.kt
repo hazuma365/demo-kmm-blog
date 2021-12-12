@@ -43,7 +43,10 @@ fun TagButton(articleTagType: ArticleTagType, name: String, count: Int = 0) {
             )
         }
         style {
-            borderRadius(100.vh)
+            borderRadius(3.px)
+            textDecoration("none")
+            color(Color("black"))
+            backgroundColor(Color("white"))
             margin(1.px)
         }
     }) {

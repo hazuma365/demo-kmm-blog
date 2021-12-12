@@ -1,7 +1,5 @@
 package com.sample.style
 
-import com.sample.style.AppCSSVariables
-import com.sample.style.AppStylesheet
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.selectors.CSSSelector
 
@@ -158,14 +156,5 @@ object WtCols : StyleSheet(AppStylesheet) {
         property("margin-left", "auto")
         property("margin-right", "auto")
         property("word-break", "break-all")
-    }
-
-    val wtArticle by style {
-        AppCSSVariables.wtColCount(0)
-        display(DisplayStyle.Flex)
-        justifyContent(JustifyContent.Left)
-        flexDirection(FlexDirection.Column)
-        alignItems(AlignItems.Baseline)
-        maxWidth(100.percent)
     }
 }
