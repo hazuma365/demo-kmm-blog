@@ -48,6 +48,8 @@ fun TagButton(articleTagType: ArticleTagType, name: String, count: Int = 0) {
             color(Color("black"))
             backgroundColor(Color("white"))
             margin(1.px)
+            border(1.px, LineStyle.Solid, Color("black"))
+            fontSize(1.em)
         }
     }) {
         if (count > 0) {
