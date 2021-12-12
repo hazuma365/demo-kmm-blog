@@ -4,37 +4,18 @@ import com.sample.data.Article
 
 val article20200111 =
     Article(
-        title = "CodeBlockの幅調整",
+        title = "バックエンドエンジニアがマークアップするときに思ったこと",
         categories = listOf("blog", "aws"),
         date = "2021-12-11",
         body = """
 
-Java
-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-```yaml
-version: 1
-frontend:
-  phases:
-    # IMPORTANT - Please verify your build commands
-    preBuild:
-      commands:
-      - rpm --import https://yum.corretto.aws/corretto.key
-      - curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-      - yum install -y java-11-amazon-corretto
-    build:
-      commands:
-      - ./gradlew jsBrowserProductionWebpack
-      - ls
-  artifacts:
-    # IMPORTANT - Please verify your build output directory
-    files:
-      - '**/*'
-    baseDirectory: /
-  cache:
-    paths: []
-```
+スタイルが異なるように思えた。
+- 基礎レベルでは、HTMLやCSS利用への習熟、ブラウザの動作など、技術要素・ライブラリに依った経験・知識が大きい感じる
+- 実践レベルではUI・UXなどの
+- データフローとアルゴリズムを重視する。
+時代の流れが早い、数年単位でFWが変わる。
+ブラウザ仕様・Apple・Googleなどの外的環境の影響を受けやすい。
+- Markdown->ASTNode->Composable
+- Markdown->HTML->Composable(Html) という手段があるように思えて仕方がない。
     """.trimIndent()
     )
