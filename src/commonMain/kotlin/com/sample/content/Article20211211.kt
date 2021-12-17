@@ -5,7 +5,7 @@ import com.sample.data.Article
 val article20200111 =
     Article(
         title = "バックエンドエンジニアがマークアップするときに思ったこと",
-        categories = listOf("blog", "aws"),
+        categories = listOf("blog", "poem"),
         date = "2021-12-11",
         body = """
 
